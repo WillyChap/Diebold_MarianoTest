@@ -58,7 +58,7 @@ from scipy import stats
 
 
 def DMtest(e1,e2,h=1,power=2,alternative='two.sided'):
-    d = np.abs(e1)**power - np.abs(e2)**2
+    d = np.abs(e1)**power - np.abs(e2)**power
     dcov = acovf(d,nlag=h-1,fft=False,missing='drop')
     dvar = np.sum(np.append(dcov[0],2*dcov[1:]))/len(d)
     dv = dvar
